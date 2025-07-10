@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class SearchResultPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public SearchResultPage(WebDriver driver) {
         this.driver = driver;
@@ -26,7 +26,7 @@ public class SearchResultPage {
     public void clickFirstProduct() {
         List<WebElement> products = driver.findElements(By.cssSelector("div.s-main-slot div[data-component-type='s-search-result']"));
         if (!products.isEmpty()) {
-            products.get(0).findElement(By.cssSelector("h2 a")).click();
+            products.getFirst().findElement(By.cssSelector("h2 a")).click();
         }
     }
 }
